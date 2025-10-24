@@ -1,0 +1,115 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: honeydew;
+
+}
+
+main{
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5 10px rgba(0, 0, 0, 0.832);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label{
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+input, select, textarea{
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+}
+
+input{
+    transition: width 0.3s ease-in-out;
+}
+
+input:focus{
+    width: 70%
+}
+
+textarea{
+        resize: none;
+}
+
+button{
+    margin-top: 15px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+
+}
+
+button:hover{
+    background-color: darkblue;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover{
+    transform: scaleX(200%);
+    color: rgb(77, 162, 253);
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+
+table{
+    background-color: lightgray;
+    border-collapse: collapse;
+    margin-top: 25px;
+    min-width: 600px;
+}
+
+td{
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+tr:hover{
+    background-color: lightblue;
+    transition: background-color 0.3s;
+}
+
+#schedule{
+    margin-bottom: 40px;
+}
+
+.table-container{
+    overflow-x: auto;
+    margin-top: 20px;
+}

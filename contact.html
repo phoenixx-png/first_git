@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <h1> CONTACT US! </h1>
+
+</head>
+<body>
+<section id="contact-form">
+            <h2> Get in Touch </h2>
+            <form action="#" method="POST">
+                <label for="name"> Name: </label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email"> Email: </label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone"> Phone: </label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="subject"> Subject: </label>
+                <select id="subject" name="subject" required>
+                    <option value=""> Select a Subject </option>
+                    <option value="inquiry"> General Inquiry </option>
+                    <option value="appointment"> Appointment </option>
+                    <option value="support"> Support </option>
+                    <option value="feedback"> Feedback </option>
+                </select>
+
+                <label for="message"> Message: </label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit"> Submit </button>
+            </form>
+        </section>
+
+   <section id="schedule">
+            <h2> Appointment Times: </h2>
+            <table border cellpadding="8" align="center">
+                <tr>
+                    <th>Day</th>
+                    <th>Morning</th>
+                    <th>Afternoon</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>09:00 - 11:00</td>
+                    <td>14:00 - 16:00</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>10:00 - 12:00</td>
+                    <td>13:00 - 15:00</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>09:30 - 11:30</td>
+                    <td>14:30 - 16:30</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>08:00 - 10:00</td>
+                    <td>13:00 - 15:00</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>09:00 - 11:00</td>
+                    <td>15:00 - 17:00</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+
+.bbh-sans-hegarty-regular {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* element selector */
+h2 {
+    color:brown
+}
+
+/* id selector */
+#container{
+    border: solid blue 3px;
+}
+
+/* class selector */
+.para{
+    font-size: 6vw;
+    color: green
+}
+
+/* attribute selector */
+h1[name="heading"]{
+    color:blueviolet;
+}
+
+/* hover Pseudo-class */
+h2:hover{
+    font-size: 10px;
+}
+/* first letter Pseudo-element */
+.para::first-letter{
+    color: red;
+}

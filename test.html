@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Brutalist Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg: #f2f2f2;
+    --accent: #111;
+    --panel: #e5e5e5;
+    --gap: 20px;
+    --cols: 4;
+    --transition: 0.3s ease;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body{
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--accent);
+    padding: 40px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.brand{
+    font-weight: 800;
+    font-size: 20px;
+    padding: 12px 16px;
+    border: 4px solid var(--accent);
+    background: var(--panel);
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+}
+
+.controls{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-btn{
+    border: 2px solid var(--accent);
+    background: var(--panel);
+    padding: 8px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.filter-btn:hover{
+    background: var(--accent);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.filter-btn.active{
+    background: var(--accent);
+    color: white;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+}
+
+.gallery{
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(var(--cols), 1fr);
+    transition: all var(--transition);
+}
+
+@media (max-width: 1024px){
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px){
+    .gallery { grid-template-columns: repeat(1, 1fr); }
+    body { padding: 20px; }
+}
+
+.card{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    border: 3px solid var(--accent);
+    background: white;
+    overflow: hidden;
+    position: relative;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover{
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition);
+}
+
+.card:hover img{
+    transform: scale(1.08);
+}
+
+.overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    opacity: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    transition: opacity var(--transition);
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
+.desc{
+    background: rgba(0,0,0,0.85);
+    padding: 12px;
+    font-size: 13px;
+}
+
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.tag{
+    background: var(--accent);
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.caption {
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #666;
+    border-top: 1px dashed #ccc;
+}
+
+.stamp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    border: 3px solid var(--accent);
+    font-weight: 800;
+    padding: 10px 14px;
+    transform: rotate(-4deg);
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="brand">CONCRETE</div>
+  <h1>Brutalist Gallery</h1>
+  <div class="controls">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Landscapes</button>
+    <button class="filter-btn">Portraits</button>
+    <button class="filter-btn">Architecture</button>
+  </div>
+</header>
+
+<main class="gallery">
+  <!-- 12 image cards -->
+  <div class="card">
+    <img src="https://picsum.photos/id/1018/800/600" alt="">
+    <div class="meta"><span class="title">Dusk Over Hills</span><span class="tag">Landscapes</span></div>
+    <div class="caption">Wide open spaces, grainy film vibe.</div>
+    <div class="overlay"><div class="desc">A quiet field under a heavy sky — a study of silence.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1005/800/600" alt="">
+    <div class="meta"><span class="title">Monolithic Gaze</span><span class="tag">Portraits</span></div>
+    <div class="caption">High-contrast portrait.</div>
+    <div class="overlay"><div class="desc">Light and shadow define emotion.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1025/800/600" alt="">
+    <div class="meta"><span class="title">Concrete Lines</span><span class="tag">Architecture</span></div>
+    <div class="caption">Angular forms and heavy massing.</div>
+    <div class="overlay"><div class="desc">Exploring mass and rhythm in structure.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1003/800/600" alt="">
+    <div class="meta"><span class="title">Shoreline Mist</span><span class="tag">Landscapes</span></div>
+    <div class="caption">Fog blurs the horizon line.</div>
+    <div class="overlay"><div class="desc">Edges fade into greys.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1027/800/600" alt="">
+    <div class="meta"><span class="title">Tilted</span><span class="tag">Portraits</span></div>
+    <div class="caption">Slightly off-kilter, raw emotion.</div>
+    <div class="overlay"><div class="desc">Tension in gaze and angle.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1031/800/600" alt="">
+    <div class="meta"><span class="title">Corner Tower</span><span class="tag">Architecture</span></div>
+    <div class="caption">Sharp silhouettes against sky.</div>
+    <div class="overlay"><div class="desc">A minimalist brutalist tower form.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1043/800/600" alt="">
+    <div class="meta"><span class="title">Plateau</span><span class="tag">Landscapes</span></div>
+    <div class="caption">Sun-scorched geometry.</div>
+    <div class="overlay"><div class="desc">Raw terrain stripped of color.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1062/800/600" alt="">
+    <div class="meta"><span class="title">Texture</span><span class="tag">Portraits</span></div>
+    <div class="caption">Focus on detail and grit.</div>
+    <div class="overlay"><div class="desc">Every wrinkle tells a story.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1050/800/600" alt="">
+    <div class="meta"><span class="title">Block Study</span><span class="tag">Architecture</span></div>
+    <div class="caption">Minimal ornament, pure form.</div>
+    <div class="overlay"><div class="desc">Exploring raw material expression.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1080/800/600" alt="">
+    <div class="meta"><span class="title">Ridge</span><span class="tag">Landscapes</span></div>
+    <div class="caption">Geological geometry.</div>
+    <div class="overlay"><div class="desc">Nature’s harsh but balanced composition.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/1074/800/600" alt="">
+    <div class="meta"><span class="title">Quiet</span><span class="tag">Portraits</span></div>
+    <div class="caption">Soft light, deep thought.</div>
+    <div class="overlay"><div class="desc">Stillness in the chaos of modern life.</div></div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/id/109/800/600" alt="">
+    <div class="meta"><span class="title">Walkways</span><span class="tag">Architecture</span></div>
+    <div class="caption">Rhythm of shadow and light.</div>
+    <div class="overlay"><div class="desc">Repeating arches in perspective.</div></div>
+  </div>
+</main>
+
+<div class="stamp">BRUTAL</div>
+</body>
+</html>
