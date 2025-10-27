@@ -37,3 +37,14 @@ img{
     display: none;
 }
 
+#port:checked ~ div /*img*/.port{
+    display: none;
+}
+
+#arch:checked ~ div /*img*/.arch{
+    display: none;
+}
+
+#all:checked ~ div /*img*/.all{
+    display: block;
+}
